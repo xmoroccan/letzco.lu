@@ -1,0 +1,16 @@
+<header {% if page.header_bg %}style="background-image: url('{{page.header_bg}}')"{% endif %}>
+    <div class="header-content wow fadeIn">
+        <div class="header-content-inner">
+            <img class="block-logo wow swing" alt="Lëtzco" src="{{ site.block_logo }}">
+            <hr>
+            <h1>
+              {% if page.font_icon %}<i class="{{ page.font_icon }}"></i>{% endif %}
+              {{ page.title | capitalize }}
+            </h1>
+            <p>
+              {{ page.description | capitalize }}
+            </p>
+            <a href="#services" class="btn btn-primary btn-xl page-scroll">en savoir plus</a>
+        </div>
+    </div>
+</header>

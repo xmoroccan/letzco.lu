@@ -1,0 +1,33 @@
+<!-- jQuery -->
+<script src="/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.fittext.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/uikit.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/creative.js"></script>
+
+{% if page.gallery.size > 0 %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      //FANCYBOX
+      //https://github.com/fancyapps/fancyBox
+      $(".fancybox").fancybox({
+          openEffect: "none",
+          closeEffect: "none",
+          helpers: {
+            overlay: {
+              locked: false
+            }
+          }
+      });
+    });
+  </script>
+{% endif %}

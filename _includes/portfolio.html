@@ -1,0 +1,23 @@
+<section class="no-padding" id="portfolio">
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Références</h2>
+                <hr class="primary">
+            </div>
+        </div>
+        <div class="row no-gutter">
+          {% assign refs = site.references | where: 'published', true | sort: "order" %}
+
+          {% for reference in refs %}
+            <div class="col-lg-4 col-sm-6">
+                <a href="{{ reference.site_link }}" title="{{ reference.title }}" target="_blank" class="portfolio-box">
+                    <img src="{{ reference.thumbnail }}" class="img-responsive references-img" alt="{{ reference.title }}">
+                </a>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+</section>

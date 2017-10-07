@@ -1,0 +1,32 @@
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <article class="col-md-10 col-md-offset-1">
+              <h1 class="section-heading text-center">
+                {{ page.title }}
+              </h1>
+              <hr class="primary">
+              
+              {{ page.content | markdownify }}
+              
+              {% if page.gallery.size > 0 %}
+                <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+                <div class="section-divider wow fadeInUp">
+                  <i class="fa fa-camera"></i>
+                  Plus d'images
+                </div>
+                
+                <div class="row no-gutter">
+                  {% for gallery in page.gallery %}
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp">
+                      <a class="thumbnail fancybox" rel="ligthbox" href="{{ gallery.image }}">
+                          <img src="{{ gallery.image }}" class="img-responsive" alt="">
+                      </a>
+                    </div>
+                  {% endfor %}
+                </div>  
+              {% endif %}
+            </article>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+# Site settings
+name        : "Lëtzco"
+title       : "Lëtzco - Agence de communication"
+email       : "contact@letzco.lu"
+description : "Lëtzco Digital Agency | Strategy, Design, Marketing & Technology"
+baseurl     : "" # the subpath of your site, e.g. /blog/
+url         : "localhost:4000" # the base hostname & protocol for your site
+inline_logo : "/img/inline_lg.png"
+block_logo  : "/img/block_logo.png"
+
+twitter_username:
+github_username:
+
+# Build settings
+markdown: kramdown
+
+
+# Collection
+collections:
+  services:
+    output: true
+    permalink: /:collection/:path/
+  references:
+    output: true
+    permalink: /références/:path/
+    
+    
+defaults:
+    - scope:
+        path: ""
+        type: services
+      values:
+        layout: service
+        
+    - scope:
+        path: ""
+        type: references
+      values:
+        layout: reference
+
+    - scope:
+        path: "img"
+      values:
+        image: true

@@ -1,0 +1,7 @@
+_site/
+.sass-cache/
+img/*.svg
+img/*.eps
+*.svg
+*.eps
+img/bak*
