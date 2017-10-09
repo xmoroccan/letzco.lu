@@ -1,6 +1,6 @@
 ---
 
-title        : "Site web"
+title        : "Création de sites web"
 category     : "communication-web"
 order        : 1
 description  : >-
@@ -17,7 +17,7 @@ Internet est entré dans le quotidien de votre clientèle. Les prospectus public
 
 Lëzco, c’est une équipe dont le savoir-faire dans le domaine de l’Internet n’est plus à démontrer.
 
-Nous mobilisons un pôle de spécialistes pour concrétiser vos projets et vous aider à améliorer la profitabilité de votre société. Nous intervenons sur l'ensemble du territoire national, pour en savoir plus, Venez découvrir notre site WebGazelle.net dédié à notre service de création de site Internet de qualité à budget maitrisé.
+Nous mobilisons un pôle de spécialistes pour concrétiser vos projets et vous aider à améliorer la profitabilité de votre société. Nous intervenons sur l'ensemble du territoire national.
 
 Les atouts de notre agence Web
 - **Un suivi personnalisé** : vous disposez d’un interlocuteur unique qui assurera le bon déroulement de votre projet durant l’ensemble des phases de création de votre site Internet. Pour vous offrir une visibilité, nous mettons en place une plateforme client qui permet également de faciliter les échanges et d’en assurer une traçabilité.
