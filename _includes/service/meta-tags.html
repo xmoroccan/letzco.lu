@@ -1,0 +1,81 @@
+<!-- general tags -->
+{%- if page.keywords and page.keywords != blank -%}
+	{%- assign keywords = page.keywords -%}
+{%- else if page.services_list and page.services_list != blank -%}
+	{%- assign keywords = page.services_list | map: 'name' | join: ', ' -%}
+{%- endif -%}
+
+{%- if page.pageType and page.pageType == 'home' %}
+{%- assign pageUrl = site.url -%}
+{%- else -%}
+{%- assign pageUrl = site.url | append: page.url -%}
+{%- endif -%}
+{%- if keywords and keywords != blank -%}
+<meta name="keywords" content="{{ keywords }}" />
+{%- endif -%}
+<meta name="description" content="{{ page.description }}" />
+<meta name="robots" content="all" />
+<meta name="robots" content="index,follow,all" />
+<meta name="googlebot" content="index, follow, ydir, odp, imageindex" />
+<meta name="slurp" content="index, follow, ydir, odp, archive" />
+<meta name="language" content="FR" />
+<link rel="canonical" href="{{ pageUrl }}" />
+{%- if site.contact.google and site.contant.google != blank -%}
+<link rel="publisher" href="{{ site.contant.google }}" />
+<meta property="og:see_also" content="{{ site.contant.google }}" />
+{%- endif -%}
+
+<!-- open graph -->
+<meta property="og:description" content="{{ page.description }}" />
+{%- if page.type and page.type != blank -%}
+<meta property="og:type" content="{{ page.type }}" />
+{%- else -%}
+<meta property="og:type" content="article" />
+{%- endif -%}
+<meta property="og:image" content="{{ page.thumbnail }}" />
+<meta property="og:url" content="{{ pageUrl }}"/>
+<meta property="og:site_name" content="{{ site.name }}"/>
+{%- if site.og.page_id and site.og.page_id != blank -%}
+<meta property="fb:page_id" content="{{ site.og.page_id }}" />
+{%- endif -%}
+{%- if site.og.app_id and site.og.app_id != blank -%}
+<meta property="fb:app_id" content="{{ site.og.app_id }}" />
+{%- endif -%}
+{%- if site.contant.facebook and site.contant.facebook != blank -%}
+<meta property="article:publisher" content="{{ site.contant.facebook }}" />
+{%- endif -%}
+{%- if site.contact.linkedin and site.contact.linkedin != blank -%}
+<meta property="og:see_also" content="{{ site.contact.linkedin }}" />
+{%- endif -%}
+
+<!-- twitter tags -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta name="twitter:description" content="{{ page.description }}" />
+<meta name="twitter:image" content="{{ page.thumbnail }}" />
+{%- if site.contact.twitter and site.contant.twitter != blank -%}
+<meta name="twitter:site" content="{{ site.contant.twitter }}" />
+<meta property="og:see_also" content="{{ site.contant.twitter }}" />
+{%- endif -%}
+<meta property="twitter:url" content="{{ pageUrl }}" />
+<!-- google plus -->
+<meta itemprop="description" content="{{ page.description }}" />
+<meta itemprop="image" content="{{ page.thumbnail }}" />
+<meta itemprop="url" content="{{ pageUrl }}" />
+<!-- icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="{{ site.url }}/img/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="{{ site.url }}/img/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="{{ site.url }}/img/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="{{ site.url }}/img/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="{{ site.url }}/img/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ site.url }}/img/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="{{ site.url }}/img/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="{{ site.url }}/img/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/img/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="{{ site.url }}/img/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="{{ site.url }}/img/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/img/icons/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#2196F3">
+<meta name="msapplication-TileImage" content="{{ site.url }}/img/icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#2196F3">

@@ -8,8 +8,28 @@ url         : "localhost:4000" # the base hostname & protocol for your site
 inline_logo : "/img/inline_lg.png"
 block_logo  : "/img/block_logo.png"
 
-twitter_username:
-github_username:
+plugins:
+  - jekyll-sitemap
+
+verification:
+  bing: ""
+  google: ""
+  yandex: ""
+
+og:
+  page_id: ""
+  app_id: ""
+
+contact:
+  phone: "+352 27 86 02 45"
+  fax: "+352 2 712 6138"
+  facebook: ""
+  twitter: ""
+  github: ""
+  google: ""   
+  
+# twitter_username:
+# github_username: deleted
 
 # Build settings
 markdown: kramdown
@@ -23,7 +43,6 @@ collections:
   references:
     output: true
     permalink: /références/:path/
-    
     
 defaults:
     - scope:
