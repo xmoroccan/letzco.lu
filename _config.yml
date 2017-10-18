@@ -1,10 +1,9 @@
 # Site settings
 name        : "Lëtzco"
 title       : "Lëtzco - Agence de communication"
-email       : "contact@letzco.lu"
 description : "Lëtzco Digital Agency | Strategy, Design, Marketing & Technology"
 baseurl     : "" # the subpath of your site, e.g. /blog/
-url         : "localhost:4000" # the base hostname & protocol for your site
+url         : "http://letzco.lu" # the base hostname & protocol for your site
 inline_logo : "/img/inline_lg.png"
 block_logo  : "/img/block_logo.png"
 
@@ -21,15 +20,14 @@ og:
   app_id: ""
 
 contact:
-  phone: "+352 27 86 02 45"
-  fax: "+352 2 712 6138"
-  facebook: ""
-  twitter: ""
-  github: ""
-  google: ""   
-  
-# twitter_username:
-# github_username: deleted
+  email   : "contact@letzco.lu"
+  phone   : "+352 27 86 12 80"
+  fax     : "+352 2 712 6138"
+  facebook: "https://www.facebook.com/letzco.lu"
+  twitter : "https://twitter.com/letzcolu"
+  github  : ""
+  google  : "https://business.google.com/b/116871524587057544176"
+  linkedin: "https://www.linkedin.com/company/letzco"
 
 # Build settings
 markdown: kramdown
@@ -43,14 +41,14 @@ collections:
   references:
     output: true
     permalink: /références/:path/
-    
+
 defaults:
     - scope:
         path: ""
         type: services
       values:
         layout: service
-        
+
     - scope:
         path: ""
         type: references

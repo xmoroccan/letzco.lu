@@ -20,9 +20,9 @@
 <meta name="slurp" content="index, follow, ydir, odp, archive" />
 <meta name="language" content="FR" />
 <link rel="canonical" href="{{ pageUrl }}" />
-{%- if site.contact.google and site.contant.google != blank -%}
-<link rel="publisher" href="{{ site.contant.google }}" />
-<meta property="og:see_also" content="{{ site.contant.google }}" />
+{%- if site.contact.google and site.contact.google != blank -%}
+<link rel="publisher" href="{{ site.contact.google }}" />
+<meta property="og:see_also" content="{{ site.contact.google }}" />
 {%- endif -%}
 
 <!-- open graph -->
@@ -41,8 +41,8 @@
 {%- if site.og.app_id and site.og.app_id != blank -%}
 <meta property="fb:app_id" content="{{ site.og.app_id }}" />
 {%- endif -%}
-{%- if site.contant.facebook and site.contant.facebook != blank -%}
-<meta property="article:publisher" content="{{ site.contant.facebook }}" />
+{%- if site.contact.facebook and site.contact.facebook != blank -%}
+<meta property="article:publisher" content="{{ site.contact.facebook }}" />
 {%- endif -%}
 {%- if site.contact.linkedin and site.contact.linkedin != blank -%}
 <meta property="og:see_also" content="{{ site.contact.linkedin }}" />
@@ -52,9 +52,9 @@
 <meta content="summary_large_image" name="twitter:card"/>
 <meta name="twitter:description" content="{{ page.description }}" />
 <meta name="twitter:image" content="{{ page.thumbnail }}" />
-{%- if site.contact.twitter and site.contant.twitter != blank -%}
-<meta name="twitter:site" content="{{ site.contant.twitter }}" />
-<meta property="og:see_also" content="{{ site.contant.twitter }}" />
+{%- if site.contact.twitter and site.contact.twitter != blank -%}
+<meta name="twitter:site" content="{{ site.contact.twitter }}" />
+<meta property="og:see_also" content="{{ site.contact.twitter }}" />
 {%- endif -%}
 <meta property="twitter:url" content="{{ pageUrl }}" />
 <!-- google plus -->

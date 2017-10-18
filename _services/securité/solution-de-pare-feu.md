@@ -1,5 +1,5 @@
 ---
-title        : "Solution de parfeu"
+title        : "Solution de pare-feu"
 category     : "securité"
 order        : 2
 description  : >-
