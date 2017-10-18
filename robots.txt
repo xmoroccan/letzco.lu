@@ -1,2 +1,7 @@
+---
+layout: null
+---
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /error.html
+Sitemap: {{ site.url }}/sitemap.xml

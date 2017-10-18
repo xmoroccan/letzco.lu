@@ -5,6 +5,7 @@ category     : "Conception"
 sort         : 2
 presentation : "La communication visuelle reflète l’identité de votre entreprise. LuxComBourg donnera une dimension graphique à votre marque et à vos services."
 
+
 thumbnail    : "img/services/graphic_design.jpg"
 card_color   : "uk-card-green"
 services_list:

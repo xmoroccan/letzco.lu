@@ -1,0 +1,131 @@
+{% include service/meta-tags.html %}
+<!-- home page -->
+{%- if page.pageType and page.pageType == 'home' %}
+<meta property="geo.position" content="{{page.addr.latitude}}; {{page.addr.longitude}}">
+<meta property="geo.placename" content="{{ page.addr.placename }}">
+<meta property="geo.region" content="{{ page.addr.region }}">
+<meta property="og:latitude" content="{{ page.addr.latitude }}" />
+<meta property="og:longitude" content="{{ page.addr.longitude }}" />
+<meta property="og:street-address" content="{{ page.addr.placename }}" />
+<meta property="og:locality" content="{{ page.addr.locality }}"/>
+<meta property="og:region" content="{{ page.addr.region }}" />
+<meta property="og:postal-code" content="{{ page.addr.zipCode }}" />
+<meta property="og:country-name" content="{{ page.addr.country }}" />
+
+<!-- verifications -->
+<meta name="msvalidate.01" content="{{ site.verification.bing }}" />
+<meta name="google-site-verification" content="{{ site.verification.google }}" />
+<meta name="yandex-verification" content="{{ site.verification.yandex }}" />
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Service",
+  "serviceType": "{{ page.schema.serviceType }}",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "{{ site.name }}",
+    {%- if page.schema.images and page.schema.image != blank -%}
+	 "image": {{ page.schema.images }},
+	{%- endif -%} 
+    "address": {
+	    "@type":"PostalAddress",
+	    "streetAddress":"{{ page.addr.placename }}",
+	    "addressLocality":"{{ page.addr.locality }}",
+	    "addressRegion":"{{ page.addr.region }}",
+	    "postalCode":"{{ page.addr.zipCode }}",
+	    "addressCountry":"{{ page.addr.country }}"
+	},
+	"url": "{{ pageUrl }}",
+	"logo": "{{ pageUrl }}{{ site.block_logo }}",
+	"sameAs": [
+	    "{{ site.contact.facebook }}",
+	    "{{ site.contact.twitter }}",
+	    {%- if site.contact.linkedin and site.contact.linkedin != blank -%}
+	    "{{ site.contact.linkedin }}",
+	    {%- endif -%}
+	    "{{ site.contact.google }}"
+	],
+	"geo":{
+    	"@type":"GeoCoordinates",
+	    "latitude": {{ page.addr.latitude }},
+	    "longitude": {{ page.addr.longitude }}
+	},
+	"telephone":"{{ site.contact.phone }}",
+	"email": "{{ site.email }}"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "{{ page.addr.locality }}"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "{{ page.schema.serviceType }}",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "{{ page.schema.com.name }}",
+        "itemListElement": [
+        {%- for offer in page.schema.com.offers  -%}
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "{{ offer }}"
+            }
+          }{%- if forloop.last == false -%},{%- endif -%}
+        {%- endfor -%}  
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "{{ page.schema.security.name }}",
+        "itemListElement": [
+        {%- for offer in page.schema.security.offers  -%}
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "{{ offer }}"
+            }
+          }{%- if forloop.last == false -%},{%- endif -%}
+        {%- endfor -%}
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "{{ page.schema.storage.name }}",
+        "itemListElement": [
+        {%- for offer in page.schema.storage.offers  -%}
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "{{ offer }}"
+            }
+          }{%- if forloop.last == false -%},{%- endif -%}
+        {%- endfor -%}
+        ]
+      }
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": "1",
+            "item": {
+                "@id": "{{ pageUrl }}",
+                "name": "Homepage" 
+            } 
+        }
+    ] 
+}
+</script>
+{%- endif -%}
