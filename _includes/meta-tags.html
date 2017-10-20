@@ -23,7 +23,9 @@
   "@context": "http://schema.org",
   "@type": "Organization",
   "name": "{{ site.name }}",
+  "alternateName":"Lëtzco Digital Agency",
   "url": "{{ pageUrl }}",
+  "@id":"#organization",
   "logo": "{{ pageUrl }}{{ site.block_logo }}",
   "sameAs": [
     "{{ site.contact.facebook }}",
@@ -43,7 +45,7 @@
     "@type": "LocalBusiness",
     "name": "{{ site.name }}",
     "image": "{{ pageUrl }}{{ site.block_logo }}",
-    "@id": "{{ pageUrl }}",
+    "@id": "#localbusiness",
     "url": "{{ pageUrl }}",
     "telephone": "{{ site.contact.phone }}",
     "address": {
@@ -130,22 +132,24 @@
 }
 </script>
 
+{%- assign pagesList = site.services | sort: "order" -%}
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-        {
+    {%- for pl in pagesList -%}
+        {%- assign pos = pl.url | split: '/' | size | minus: 1 -%}
+       {
             "@type": "ListItem",
-            "position": "1",
+            "position": "{{ pos }}",
             "item": {
-                "@id": "{{ pageUrl }}",
-                "name": "Homepage" 
+                "@id": "{{ site.url }}{{ pl.url }}",
+                "name": "{{ pl.title }}" 
             } 
-        }
+        }{%- if forloop.last == false -%},{%- endif -%} 
+    {%- endfor -%}
     ] 
 }
 </script>
-
-
 {%- endif -%}

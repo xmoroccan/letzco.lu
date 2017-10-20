@@ -6,8 +6,8 @@ order        : 1
 description  : >-
   Confiez-nous la réalisation de votre site web sécurisé et de nouvelle génération.
   Nous nous chargeons de l'intégration de vos pages web au pixel près dans le respect des bonnes pratiques du web.
-thumbnail    : "http://www.elsner.com/wp-content/themes/elsner2016/img/web-development.png"
-header_bg    : "https://media.metrolatam.com/2017/07/31/desarrolloinf-1200x600.jpg"
+thumbnail    : "/img/services/web-development.png"
+header_bg    : "/img/web-development.jpg"
 card_color   : "uk-card-blue"
 
 ---
