@@ -17,6 +17,23 @@
 <meta name="google-site-verification" content="{{ site.verification.google }}" />
 <meta name="yandex-verification" content="{{ site.verification.yandex }}" />
 
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.name }}",
+  "url": "{{ pageUrl }}",
+  "logo": "{{ pageUrl }}{{ site.block_logo }}",
+  "sameAs": [
+    "{{ site.contact.facebook }}",
+    "{{ site.contact.twitter }}",
+    "{{ site.contact.linkedin }}",
+    "{{ site.contact.google }}"
+  ]
+}
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "http://schema.org/",
@@ -25,34 +42,35 @@
   "provider": {
     "@type": "LocalBusiness",
     "name": "{{ site.name }}",
-    {%- if page.schema.images and page.schema.image != blank -%}
-	 "image": {{ page.schema.images }},
-	{%- endif -%} 
+    "image": "{{ pageUrl }}{{ site.block_logo }}",
+    "@id": "{{ pageUrl }}",
+    "url": "{{ pageUrl }}",
+    "telephone": "{{ site.contact.phone }}",
     "address": {
-	    "@type":"PostalAddress",
-	    "streetAddress":"{{ page.addr.placename }}",
-	    "addressLocality":"{{ page.addr.locality }}",
-	    "addressRegion":"{{ page.addr.region }}",
-	    "postalCode":"{{ page.addr.zipCode }}",
-	    "addressCountry":"{{ page.addr.country }}"
-	},
-	"url": "{{ pageUrl }}",
-	"logo": "{{ pageUrl }}{{ site.block_logo }}",
-	"sameAs": [
-	    "{{ site.contact.facebook }}",
-	    "{{ site.contact.twitter }}",
-	    {%- if site.contact.linkedin and site.contact.linkedin != blank -%}
-	    "{{ site.contact.linkedin }}",
-	    {%- endif -%}
-	    "{{ site.contact.google }}"
-	],
-	"geo":{
-    	"@type":"GeoCoordinates",
-	    "latitude": {{ page.addr.latitude }},
-	    "longitude": {{ page.addr.longitude }}
-	},
-	"telephone":"{{ site.contact.phone }}",
-	"email": "{{ site.email }}"
+      "@type": "PostalAddress",
+      "streetAddress": "{{ page.addr.placename }}",
+      "addressLocality": "{{ page.addr.locality }}",
+      "postalCode": "{{ page.addr.zipCode }}",
+      "addressCountry": "{{ page.addr.country }}"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "geo":{
+        "@type":"GeoCoordinates",
+        "latitude": {{ page.addr.latitude }},
+        "longitude": {{ page.addr.longitude }}
+    }
   },
   "areaServed": {
     "@type": "State",
@@ -128,4 +146,6 @@
     ] 
 }
 </script>
+
+
 {%- endif -%}
