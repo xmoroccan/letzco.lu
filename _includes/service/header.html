@@ -10,7 +10,13 @@
             <p>
               {{ page.description | capitalize }}
             </p>
-            <a href="#services" class="btn btn-primary btn-xl page-scroll">en savoir plus</a>
+            <a href="#services" class="btn btn-primary btn-xl page-scroll">
+              {% if page.services_group %}
+                Découvrez nos services
+              {% else %}
+                En savoir plus
+              {% endif %}
+            </a>
         </div>
     </div>
 </header>

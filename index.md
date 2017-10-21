@@ -3,10 +3,11 @@ layout: front
 header_bg: "/img/Veianen_Buerg_05.jpg"
 keywords: "Création de sites web, Réseaux d'infrastructures, Stockage, Securité, développement applications, développement sites web, développement site web responsives, sites web mobiles, agence développement site web, agence web"
 thumbnail: "/img/block_logo.png"
+services_group: "all"
 pageType: "home"
 addr:
-   latitude: "49.573469"
-   longitude: "6.1546108"
+   latitude: "49.57357"
+   longitude: "6.15655"
    placename: "2b rue de l'Alzette"
    locality: "Hesperange"
    region: "Hesperange"

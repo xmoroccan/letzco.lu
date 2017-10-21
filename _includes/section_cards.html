@@ -1,195 +1,221 @@
 <div class="uk-scope">
-  <div class="section-divider wow fadeInUp">
-    <i class="fa fa-code"></i> &nbsp;
-    Communication web
-  </div>
-  {% for service in developement_services %}
-    {% capture modulo_size %}{{ developement_services.size | modulo:2 }}{% endcapture %}
-    {% if modulo_size == '1' and forloop.last %}
-      <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-        <div class="uk-card-media-left uk-cover-container">
-            <img src="{{ service.thumbnail }}" alt="{{ service.title }}" uk-cover>
-            <canvas width="400" height="280"></canvas>
-        </div>
-        <div>
-            <div class="uk-card-body">
-              <h3 class="uk-card-title">
-                <a href="{{service.url}}">
-                  {{ service.title }}
-                </a>
-              </h3>
-              <p>
-                {{ service.description }}
-              </p>
-            </div>
-            <div class="uk-card-footer">
-                <a href="{{ service.url }}" class="uk-button uk-button-text uk-float-right">
-                  Plus de détails <i class="fa fa-long-arrow-right"></i>
-                </a>
-            </div>
-        </div>
+
+  {% if page.services_group == 'all' or page.services_group == 'developement' %}
+    {% if page.services_group == 'all' %}
+      <div class="section-divider wow fadeInUp">
+        <a href="{{ site.url }}/services/communication-web/">
+          <i class="fa fa-code"></i> &nbsp;
+          Communication web
+        </a>
       </div>
     {% else %}
-      {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-      {% if modulo == '0' or forloop.first %}
-        <div class="uk-grid uk-grid-match uk-child-width-1-2@m" uk-grid>
-      {% endif %}
+      <br>
+    {% endif %}
+    {% for service in developement_services %}
+      {% capture modulo_size %}{{ developement_services.size | modulo:2 }}{% endcapture %}
+      {% if modulo_size == '1' and forloop.last %}
+        <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+          <div class="uk-card-media-left uk-cover-container">
+              <img src="{{ service.thumbnail }}" alt="{{ service.title }}" uk-cover>
+              <canvas width="400" height="280"></canvas>
+          </div>
           <div>
-            <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp">
-              <div class="uk-card-media-top">
-                  <img src="{{ service.thumbnail }}" alt="{{ service.title }}">
-              </div>
               <div class="uk-card-body">
-                  <h3 class="uk-card-title">
-                    <a href="{{ service.url }}">
-
-                      {{ service.title }}
-                    </a>
-                  </h3>
-                  <p>
-                      {{ service.description }}
-                  </p>
+                <h3 class="uk-card-title">
+                  <a href="{{service.url}}">
+                    {{ service.title }}
+                  </a>
+                </h3>
+                <p>
+                  {{ service.description }}
+                </p>
               </div>
-              <br>
               <div class="uk-card-footer">
                   <a href="{{ service.url }}" class="uk-button uk-button-text uk-float-right">
                     Plus de détails <i class="fa fa-long-arrow-right"></i>
                   </a>
               </div>
-            </div>
           </div>
-      {% if modulo == '1' or forloop.last %}
         </div>
+      {% else %}
+        {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
+        {% if modulo == '0' or forloop.first %}
+          <div class="uk-grid uk-grid-match uk-child-width-1-2@m" uk-grid>
+        {% endif %}
+            <div>
+              <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp">
+                <div class="uk-card-media-top">
+                    <img src="{{ service.thumbnail }}" alt="{{ service.title }}">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">
+                      <a href="{{ service.url }}">
+
+                        {{ service.title }}
+                      </a>
+                    </h3>
+                    <p>
+                        {{ service.description }}
+                    </p>
+                </div>
+                <br>
+                <div class="uk-card-footer">
+                    <a href="{{ service.url }}" class="uk-button uk-button-text uk-float-right">
+                      Plus de détails <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+              </div>
+            </div>
+        {% if modulo == '1' or forloop.last %}
+          </div>
+        {% endif %}
       {% endif %}
-    {% endif %}
-  {% endfor %}
-  
-  <div class="section-divider wow fadeInUp">
-    <i class="fa fa-shield"></i> &nbsp;
-    Securité
-  </div>
-  {% for service in security_services %}
-    {% capture modulo_size %}{{ security_services.size | modulo:2 }}{% endcapture %}
-    {% if modulo_size == '1' and forloop.last %}
-      <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-        <div class="uk-card-media-left uk-cover-container">
-            <img src="{{ service.thumbnail }}" alt="{{ service.title }}" uk-cover>
-            <canvas width="400" height="280"></canvas>
-        </div>
-        <div>
-            <div class="uk-card-body">
-              <h3 class="uk-card-title">
-                <a href="{{service.url}}">
-                  {{ service.title }}
-                </a>
-              </h3>
-              <p>
-                {{ service.description }}
-              </p>
-            </div>
-            <div class="uk-card-footer">
-                <a href="{{ service.url }}" class="uk-button uk-button-text uk-float-right">
-                  Plus de détails <i class="fa fa-long-arrow-right"></i>
-                </a>
-            </div>
-        </div>
+    {% endfor %}
+  {% endif %}
+
+  {% if page.services_group == 'all' or page.services_group == 'security' %}
+    {% if page.services_group == 'all' %}
+      <div class="section-divider wow fadeInUp">
+        <a href="{{ site.url }}/services/securité/">
+          <i class="fa fa-shield"></i> &nbsp;
+          Securité
+        </a>
       </div>
     {% else %}
-      {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-      {% if modulo == '0' or forloop.first %}
-        <div class="uk-grid uk-grid-match uk-child-width-1-2@m" uk-grid>
-      {% endif %}
+      <br>
+    {% endif %}
+    {% for service in security_services %}
+      {% capture modulo_size %}{{ security_services.size | modulo:2 }}{% endcapture %}
+      {% if modulo_size == '1' and forloop.last %}
+        <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+          <div class="uk-card-media-left uk-cover-container">
+              <img src="{{ service.thumbnail }}" alt="{{ service.title }}" uk-cover>
+              <canvas width="400" height="280"></canvas>
+          </div>
           <div>
-            <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp">
-              <div class="uk-card-media-top">
-                  <img src="{{ service.thumbnail }}" alt="{{ service.title }}">
-              </div>
               <div class="uk-card-body">
-                  <h3 class="uk-card-title">
-                    <a href="{{service.url}}">
-
-                      {{ service.title }}
-                    </a>
-                  </h3>
-                  <p>
-                      {{ service.description }}
-                  </p>
+                <h3 class="uk-card-title">
+                  <a href="{{service.url}}">
+                    {{ service.title }}
+                  </a>
+                </h3>
+                <p>
+                  {{ service.description }}
+                </p>
               </div>
-              <br>
               <div class="uk-card-footer">
                   <a href="{{ service.url }}" class="uk-button uk-button-text uk-float-right">
                     Plus de détails <i class="fa fa-long-arrow-right"></i>
                   </a>
               </div>
-            </div>
           </div>
-      {% if modulo == '1' or forloop.last %}
         </div>
-      {% endif %}
-    {% endif %}
-  {% endfor %}
+      {% else %}
+        {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
+        {% if modulo == '0' or forloop.first %}
+          <div class="uk-grid uk-grid-match uk-child-width-1-2@m" uk-grid>
+        {% endif %}
+            <div>
+              <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp">
+                <div class="uk-card-media-top">
+                    <img src="{{ service.thumbnail }}" alt="{{ service.title }}">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">
+                      <a href="{{service.url}}">
 
-  <div class="section-divider wow fadeInUp">
-    <i class="fa fa-server"></i> &nbsp;
-    Sauvegarde
-  </div>
-  {% for service in storage_services %}
-    {% capture modulo_size %}{{ storage_services.size | modulo:2 }}{% endcapture %}
-    {% if modulo_size == '1' and forloop.last %}
-      <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-        <div class="uk-card-media-left uk-cover-container">
-            <img src="{{ service.thumbnail }}" alt="{{ service.title }}" uk-cover>
-            <canvas width="400" height="280"></canvas>
-        </div>
-        <div>
-            <div class="uk-card-body">
-              <h3 class="uk-card-title">
-                <a href="{{service.url}}">
-                  {{ service.title }}
-                </a>
-              </h3>
-              <p>
-                {{ service.description }}
-              </p>
+                        {{ service.title }}
+                      </a>
+                    </h3>
+                    <p>
+                        {{ service.description }}
+                    </p>
+                </div>
+                <br>
+                <div class="uk-card-footer">
+                    <a href="{{ service.url }}" class="uk-button uk-button-text uk-float-right">
+                      Plus de détails <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+              </div>
             </div>
-            <div class="uk-card-footer">
-                <a href="{{ service.url }}" class="uk-button uk-button-text uk-float-right">
-                  Plus de détails <i class="fa fa-long-arrow-right"></i>
-                </a>
-            </div>
-        </div>
+        {% if modulo == '1' or forloop.last %}
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if page.services_group == 'all' or page.services_group == 'storage' %}
+    {% if page.services_group == 'all' %}
+      <div class="section-divider wow fadeInUp">
+        <a href="{{ site.url }}/services/sauvegarde/">
+          <i class="fa fa-server"></i> &nbsp;
+          Sauvegarde
+        </a>
       </div>
     {% else %}
-      {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-      {% if modulo == '0' or forloop.first %}
-        <div class="uk-grid uk-grid-match uk-child-width-1-2@m" uk-grid>
-      {% endif %}
+      <br>
+    {% endif %}
+    {% for service in storage_services %}
+      {% capture modulo_size %}{{ storage_services.size | modulo:2 }}{% endcapture %}
+      {% if modulo_size == '1' and forloop.last %}
+        <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+          <div class="uk-card-media-left uk-cover-container">
+              <img src="{{ service.thumbnail }}" alt="{{ service.title }}" uk-cover>
+              <canvas width="400" height="280"></canvas>
+          </div>
           <div>
-            <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp">
-              <div class="uk-card-media-top">
-                  <img src="{{ service.thumbnail }}" alt="{{ service.title }}">
-              </div>
               <div class="uk-card-body">
-                  <h3 class="uk-card-title">
-                    <a href="{{service.url}}">
-                      {{ service.title }}
-                    </a>
-                  </h3>
-                  <p>
-                      {{ service.description }}
-                  </p>
+                <h3 class="uk-card-title">
+                  <a href="{{service.url}}">
+                    {{ service.title }}
+                  </a>
+                </h3>
+                <p>
+                  {{ service.description }}
+                </p>
               </div>
-              <br>
               <div class="uk-card-footer">
                   <a href="{{ service.url }}" class="uk-button uk-button-text uk-float-right">
                     Plus de détails <i class="fa fa-long-arrow-right"></i>
                   </a>
               </div>
-            </div>
           </div>
-      {% if modulo == '1' or forloop.last %}
         </div>
+      {% else %}
+        {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
+        {% if modulo == '0' or forloop.first %}
+          <div class="uk-grid uk-grid-match uk-child-width-1-2@m" uk-grid>
+        {% endif %}
+            <div>
+              <div class="{{ service.card_color }} uk-card-default uk-card uk-card-small uk-card-hover uk-margin wow fadeInUp">
+                <div class="uk-card-media-top">
+                    <img src="{{ service.thumbnail }}" alt="{{ service.title }}">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">
+                      <a href="{{service.url}}">
+                        {{ service.title }}
+                      </a>
+                    </h3>
+                    <p>
+                        {{ service.description }}
+                    </p>
+                </div>
+                <br>
+                <div class="uk-card-footer">
+                    <a href="{{ service.url }}" class="uk-button uk-button-text uk-float-right">
+                      Plus de détails <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+              </div>
+            </div>
+        {% if modulo == '1' or forloop.last %}
+          </div>
+        {% endif %}
       {% endif %}
-    {% endif %}
-  {% endfor %}
+    {% endfor %}
+  {% endif %}
+
 </div>

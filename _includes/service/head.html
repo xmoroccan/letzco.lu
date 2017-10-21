@@ -6,7 +6,7 @@
     <meta name="description" content="{{ page.description }}">
 
     <title>
-      {{ page.category | capitalize }} - {{ page.title | capitalize }} | {{ site.name | capitalize }}
+      {% if page.category %} {{ page.category | capitalize }} - {% endif %} {{ page.title | capitalize }} | {{ site.name | capitalize }}
     </title>
 
     <!-- Bootstrap Core CSS -->
