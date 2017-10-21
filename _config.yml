@@ -12,12 +12,12 @@ plugins:
 
 verification:
   bing: ""
-  google: ""
+  google: "z3JLWiW6d2HRS2_x7UzYcBtW5Z7Xxt7f_CAviL__h6Y"
   yandex: ""
 
 og:
   page_id: ""
-  app_id: ""
+  # app_id: ""
 
 contact:
   email   : "contact@letzco.lu"

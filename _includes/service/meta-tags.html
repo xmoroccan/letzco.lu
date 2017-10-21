@@ -6,14 +6,16 @@
 {%- endif -%}
 
 {%- if page.pageType and page.pageType == 'home' %}
-{%- assign pageUrl = site.url -%}
+	{%- assign description = site.description -%}
+	{%- assign pageUrl = site.url -%}
 {%- else -%}
-{%- assign pageUrl = site.url | append: page.url -%}
+	{%- assign description = page.description -%}
+	{%- assign pageUrl = site.url | append: page.url -%}
 {%- endif -%}
 {%- if keywords and keywords != blank -%}
 <meta name="keywords" content="{{ keywords }}" />
 {%- endif -%}
-<meta name="description" content="{{ page.description }}" />
+<meta name="description" content="{{ description }}" />
 <meta name="robots" content="all" />
 <meta name="robots" content="index,follow,all" />
 <meta name="googlebot" content="index, follow, ydir, odp, imageindex" />
@@ -26,7 +28,7 @@
 {%- endif -%}
 
 <!-- open graph -->
-<meta property="og:description" content="{{ page.description }}" />
+<meta property="og:description" content="{{ description }}" />
 {%- if page.type and page.type != blank -%}
 <meta property="og:type" content="{{ page.type }}" />
 {%- else -%}
@@ -50,7 +52,7 @@
 
 <!-- twitter tags -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta name="twitter:description" content="{{ page.description }}" />
+<meta name="twitter:description" content="{{ description }}" />
 <meta name="twitter:image" content="{{ page.thumbnail }}" />
 {%- if site.contact.twitter and site.contact.twitter != blank -%}
 <meta name="twitter:site" content="{{ site.contact.twitter }}" />
@@ -58,7 +60,7 @@
 {%- endif -%}
 <meta property="twitter:url" content="{{ pageUrl }}" />
 <!-- google plus -->
-<meta itemprop="description" content="{{ page.description }}" />
+<meta itemprop="description" content="{{ description }}" />
 <meta itemprop="image" content="{{ page.thumbnail }}" />
 <meta itemprop="url" content="{{ pageUrl }}" />
 <!-- Favicons -->
