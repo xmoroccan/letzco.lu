@@ -139,12 +139,13 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
     {%- for pl in pagesList -%}
-        {%- assign pos = pl.url | split: '/' | size | minus: 1 -%}
+        {%- assign = url = pl.url | replace: 'index.html', ''  -%}
+        {%- assign pos = url | split: '/' | size | minus: 1 -%}
        {
             "@type": "ListItem",
             "position": "{{ pos }}",
             "item": {
-                "@id": "{{ site.url }}{{ pl.url }}",
+                "@id": "{{ site.url }}{{ url }}",
                 "name": "{{ pl.title }}" 
             } 
         }{%- if forloop.last == false -%},{%- endif -%} 
