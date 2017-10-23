@@ -25,7 +25,6 @@
   "name": "{{ site.name }}",
   "alternateName":"Lëtzco Digital Agency",
   "url": "{{ pageUrl }}",
-  "@id":"#organization",
   "logo": "{{ pageUrl }}{{ site.block_logo }}",
   "sameAs": [
     "{{ site.contact.facebook }}",
@@ -45,7 +44,6 @@
     "@type": "LocalBusiness",
     "name": "{{ site.name }}",
     "image": "{{ pageUrl }}{{ site.block_logo }}",
-    "@id": "#localbusiness",
     "url": "{{ pageUrl }}",
     "telephone": "{{ site.contact.phone }}",
     "address": {
@@ -72,7 +70,8 @@
         "@type":"GeoCoordinates",
         "latitude": {{ page.addr.latitude }},
         "longitude": {{ page.addr.longitude }}
-    }
+    },
+    "priceRange": "$$$"
   },
   "areaServed": {
     "@type": "State",
