@@ -12,7 +12,7 @@ addr:
    locality: "Hesperange"
    region: "Hesperange"
    zipCode: "L-5812"
-   country: "Luxembourg"
+   country: "LUX"
 schema:
     images: '["/img/block_logo.png", "/img/letzco1.jpg", "/img/letzco2.jpg"]'
     serviceType: "Services de communication et digital"
