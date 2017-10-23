@@ -13,56 +13,56 @@
 	{%- assign pageUrl = site.url | append: page.url -%}
 {%- endif -%}
 {%- if keywords and keywords != blank -%}
-<meta name="keywords" content="{{ keywords }}" />
+<meta name="keywords" content="{{ keywords }}">
 {%- endif -%}
-<meta name="description" content="{{ description }}" />
-<meta name="robots" content="all" />
-<meta name="robots" content="index,follow,all" />
-<meta name="googlebot" content="index, follow, ydir, odp, imageindex" />
-<meta name="slurp" content="index, follow, ydir, odp, archive" />
+<meta name="description" content="{{ description }}">
+<meta name="robots" content="all">
+<meta name="robots" content="index,follow,all">
+<meta name="googlebot" content="index, follow, ydir, odp, imageindex">
+<meta name="slurp" content="index, follow, ydir, odp, archive">
 <meta name="language" content="FR" />
 <link rel="canonical" href="{{ pageUrl }}" />
 {%- if site.contact.google and site.contact.google != blank -%}
-<link rel="publisher" href="{{ site.contact.google }}" />
-<meta property="og:see_also" content="{{ site.contact.google }}" />
+<link rel="publisher" href="{{ site.contact.google }}">
+<meta property="og:see_also" content="{{ site.contact.google }}">
 {%- endif -%}
 
 <!-- open graph -->
-<meta property="og:description" content="{{ description }}" />
+<meta property="og:description" content="{{ description }}">
 {%- if page.type and page.type != blank -%}
-<meta property="og:type" content="{{ page.type }}" />
+<meta property="og:type" content="{{ page.type }}">
 {%- else -%}
-<meta property="og:type" content="article" />
+<meta property="og:type" content="article">
 {%- endif -%}
-<meta property="og:image" content="{{ page.thumbnail }}" />
-<meta property="og:url" content="{{ pageUrl }}"/>
-<meta property="og:site_name" content="{{ site.name }}"/>
+<meta property="og:image" content="{{ page.thumbnail }}">
+<meta property="og:url" content="{{ pageUrl }}">
+<meta property="og:site_name" content="{{ site.name }}">
 {%- if site.og.page_id and site.og.page_id != blank -%}
-<meta property="fb:page_id" content="{{ site.og.page_id }}" />
+<meta property="fb:page_id" content="{{ site.og.page_id }}">
 {%- endif -%}
 {%- if site.og.app_id and site.og.app_id != blank -%}
-<meta property="fb:app_id" content="{{ site.og.app_id }}" />
+<meta property="fb:app_id" content="{{ site.og.app_id }}">
 {%- endif -%}
 {%- if site.contact.facebook and site.contact.facebook != blank -%}
-<meta property="article:publisher" content="{{ site.contact.facebook }}" />
+<meta property="article:publisher" content="{{ site.contact.facebook }}">
 {%- endif -%}
 {%- if site.contact.linkedin and site.contact.linkedin != blank -%}
-<meta property="og:see_also" content="{{ site.contact.linkedin }}" />
+<meta property="og:see_also" content="{{ site.contact.linkedin }}">
 {%- endif -%}
 
 <!-- twitter tags -->
-<meta content="summary_large_image" name="twitter:card"/>
-<meta name="twitter:description" content="{{ description }}" />
-<meta name="twitter:image" content="{{ page.thumbnail }}" />
+<meta content="summary_large_image" name="twitter:card">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="{{ page.thumbnail }}">
 {%- if site.contact.twitter and site.contact.twitter != blank -%}
-<meta name="twitter:site" content="{{ site.contact.twitter }}" />
-<meta property="og:see_also" content="{{ site.contact.twitter }}" />
+<meta name="twitter:site" content="{{ site.contact.twitter }}">
+<meta property="og:see_also" content="{{ site.contact.twitter }}">
 {%- endif -%}
-<meta property="twitter:url" content="{{ pageUrl }}" />
+<meta property="twitter:url" content="{{ pageUrl }}">
 <!-- google plus -->
-<meta itemprop="description" content="{{ description }}" />
-<meta itemprop="image" content="{{ page.thumbnail }}" />
-<meta itemprop="url" content="{{ pageUrl }}" />
+<meta itemprop="description" content="{{ description }}">
+<meta itemprop="image" content="{{ page.thumbnail }}">
+<meta itemprop="url" content="{{ pageUrl }}">
 <!-- Favicons -->
 <link rel="icon" type="image/png" href="{{ site.url }}/img/favicon.png?v=1">
 <link rel="apple-touch-icon" sizes="57x57" href="{{ site.url }}/img/icons/apple-icon-57x57.png?v=1">

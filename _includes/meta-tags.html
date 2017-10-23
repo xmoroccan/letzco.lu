@@ -4,18 +4,18 @@
 <meta property="geo.position" content="{{page.addr.latitude}}; {{page.addr.longitude}}">
 <meta property="geo.placename" content="{{ page.addr.placename }}">
 <meta property="geo.region" content="{{ page.addr.region }}">
-<meta property="og:latitude" content="{{ page.addr.latitude }}" />
-<meta property="og:longitude" content="{{ page.addr.longitude }}" />
-<meta property="og:street-address" content="{{ page.addr.placename }}" />
-<meta property="og:locality" content="{{ page.addr.locality }}"/>
-<meta property="og:region" content="{{ page.addr.region }}" />
-<meta property="og:postal-code" content="{{ page.addr.zipCode }}" />
-<meta property="og:country-name" content="{{ page.addr.country }}" />
+<meta property="og:latitude" content="{{ page.addr.latitude }}">
+<meta property="og:longitude" content="{{ page.addr.longitude }}">
+<meta property="og:street-address" content="{{ page.addr.placename }}">
+<meta property="og:locality" content="{{ page.addr.locality }}">
+<meta property="og:region" content="{{ page.addr.region }}">
+<meta property="og:postal-code" content="{{ page.addr.zipCode }}">
+<meta property="og:country-name" content="{{ page.addr.country }}">
 
 <!-- verifications -->
-<meta name="msvalidate.01" content="{{ site.verification.bing }}" />
-<meta name="google-site-verification" content="{{ site.verification.google }}" />
-<meta name="yandex-verification" content="{{ site.verification.yandex }}" />
+<meta name="msvalidate.01" content="{{ site.verification.bing }}">
+<meta name="google-site-verification" content="{{ site.verification.google }}">
+<meta name="yandex-verification" content="{{ site.verification.yandex }}">
 
 
 <script type="application/ld+json">
@@ -94,7 +94,7 @@
               "name": "{{ offer }}"
             }
           }{%- if forloop.last == false -%},{%- endif -%}
-        {%- endfor -%}  
+        {%- endfor -%}
         ]
       },
       {
@@ -145,12 +145,19 @@
             "@type": "ListItem",
             "position": "{{ pos }}",
             "item": {
+<<<<<<< Updated upstream
                 "@id": "{{ site.url }}{{ url }}",
                 "name": "{{ pl.title }}" 
             } 
         }{%- if forloop.last == false -%},{%- endif -%} 
+=======
+                "@id": "{{ site.url }}{{ pl.url }}",
+                "name": "{{ pl.title }}"
+            }
+        }{%- if forloop.last == false -%},{%- endif -%}
+>>>>>>> Stashed changes
     {%- endfor -%}
-    ] 
+    ]
 }
 </script>
 {%- endif -%}

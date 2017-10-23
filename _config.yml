@@ -1,7 +1,7 @@
 # Site settings
 name        : "Lëtzco"
 title       : "Lëtzco - Agence de communication"
-description : "Lëtzco Digital Agency | Strategy, Design, Marketing & Technology"
+description : "Lëtzco Digital Agency | Strategy, Design, Marketing &amp; Technology"
 baseurl     : "" # the subpath of your site, e.g. /blog/
 url         : "http://letzco.lu" # the base hostname & protocol for your site
 inline_logo : "/img/inline_lg.png"
