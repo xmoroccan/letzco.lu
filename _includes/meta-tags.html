@@ -145,17 +145,10 @@
             "@type": "ListItem",
             "position": "{{ pos }}",
             "item": {
-<<<<<<< Updated upstream
                 "@id": "{{ site.url }}{{ url }}",
-                "name": "{{ pl.title }}" 
-            } 
-        }{%- if forloop.last == false -%},{%- endif -%} 
-=======
-                "@id": "{{ site.url }}{{ pl.url }}",
                 "name": "{{ pl.title }}"
             }
         }{%- if forloop.last == false -%},{%- endif -%}
->>>>>>> Stashed changes
     {%- endfor -%}
     ]
 }
